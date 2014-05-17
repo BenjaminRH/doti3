@@ -6,6 +6,7 @@ set $mod Mod4
 # Some startup scripts (move to .zshrc or something)
 exec xkbindkeys
 exec source ~/.zshrc
+exec feh -x --bg-fill ~/Pictures/mountains.jpg
 exec setxkbmap -option ctrl:swapcaps
 exec unclutter -idle 1 -noevents &
 exec synapse
