@@ -148,6 +148,14 @@ bindsym $mod+r mode "resize"
 # multimedia keys
 bindsym XF86AudioRaiseVolume exec "amixer -D pulse sset Master '2%+'"
 bindsym XF86AudioLowerVolume exec "amixer -D pulse sset Master '2%-'"
+# bindsym XF86AudioMute exec $(amixer get Master | grep off > /dev/null && amixer -q set Master unmute) || amixer -q set Master mute
+bindsym $mod+m exec $(amixer get Master | grep off > /dev/null && amixer -q set Master unmute) || amixer -q set Master mute
+
+# Rdio controls
+# bindsym $mod+XF86AudioPrev exec xdotool key --window $(xdotool search --any --pid $(ps -ef | grep rdio | grep -v grep | awk '{print $2}') --name "Rdio") Left
+# bindsym $mod+XF86AudioPlay exec xdotool key --window $(xdotool search --any --pid $(ps -ef | grep rdio | grep -v grep | awk '{print $2}') --name "Rdio") space
+# bindsym $mod+p exec xdotool key --window $(xdotool search --any --pid $(ps -ef | grep rdio | grep -v grep | awk '{print $2}') --name "Rdio") space
+# bindsym $mod+XF86AudioNext exec xdotool key --window $(xdotool search --any --pid $(ps -ef | grep rdio | grep -v grep | awk '{print $2}') --name "Rdio") Right
 
 # Brightness up
 bindsym XF86Sleep exec "xbacklight -inc 10"
